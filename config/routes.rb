@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'about#index'
+  root 'static_pages#index'
+  get 'home', to: 'static_pages#home'
 
   resources :articles
   
