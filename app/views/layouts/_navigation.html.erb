@@ -1,8 +1,9 @@
 <h3>ALPHA BLOG</h3>
 
 <% if logged_in? %>
-<%= link_to current_user.username, user_path(current_user) %>
+  <%= link_to current_user.username, user_path(current_user) %>
   <%= link_to 'Logout', logout_path, data: { turbo_method: :delete } %>
+  <%= link_to 'Delete Profile', user_path(current_user), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
 <% else %>
   <%= link_to 'Login', login_path %>
   <%= link_to 'Sign up', signup_path %>
