@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = 'Article created successfully'
       redirect_to @article
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
