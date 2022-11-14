@@ -19,7 +19,9 @@
         <td><%= time_ago_in_words(user.created_at) %></td>
         <td>
           <%= link_to 'View Profile', user %>
-          <%= link_to 'Edit Profile', edit_user_path(user) %>
+          <% if logged_in? && user == current_user %>
+            <%= link_to 'Edit Profile', edit_user_path(user) %>
+          <% end %>
         </td>
     </tr>
   <% end%>

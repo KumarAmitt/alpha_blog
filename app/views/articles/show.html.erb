@@ -7,7 +7,8 @@
   <strong>Author: </strong><%= @article.user.username if @article.user %>
 </p>
 
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), data: { 'turbo-method': :delete, turbo_confirm: 'You sure?' } %> |
+<% if logged_in? && @article.user == current_user %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Delete', article_path(@article), data: { 'turbo-method': :delete, turbo_confirm: 'You sure?' } %> |
+<% end %>
 <%= link_to 'Return to articles listing', articles_path %>
