@@ -5,6 +5,7 @@
       <th>Description</th>
       <th>Author</th>
       <th>Actions</th>
+      <th>Category</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,9 @@
             <%= link_to 'Delete', article_path(article), data: { 'turbo-method': :delete, turbo_confirm: 'You sure?' } %>
          <% end%>
         </td>
+        <% if article.categories.any? %>
+           <td><%= render article.categories %></td>
+        <% end %>
     </tr>
   <% end%>
   </tbody>

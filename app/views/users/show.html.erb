@@ -1,6 +1,7 @@
 <h2><%= @user.username %>'s profile</h2>
 
 <%= gravatar_for @user, size: 100 %>
+
 <% if logged_in? && @user == current_user %>
   <%= link_to 'Edit your profile', edit_user_path(@user) %>
 <% end %>
