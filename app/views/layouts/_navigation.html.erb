@@ -12,7 +12,8 @@
 
 
 <% if logged_in? && current_user.admin? %>
-  <%= link_to 'Create new category', new_category_path %> 
+  <%= link_to 'Create new category', new_category_path %> | 
+  <%= link_to 'View categories', categories_path %> 
 <% else %>
   <%= link_to 'View categories', categories_path %> 
 <% end %>
